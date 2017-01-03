@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A63B0A81E1C3DD10096E565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0A71E1C3DD10096E565 /* AppDelegate.swift */; };
+		7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0A91E1C3DD10096E565 /* ViewController.swift */; };
+		7A63B0AD1E1C3DD10096E565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A63B0AB1E1C3DD10096E565 /* Main.storyboard */; };
+		7A63B0AF1E1C3DD10096E565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A63B0AE1E1C3DD10096E565 /* Assets.xcassets */; };
+		7A63B0B21E1C3DD10096E565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A63B0B01E1C3DD10096E565 /* LaunchScreen.storyboard */; };
+		7A63B0BD1E1C3DD20096E565 /* MyCoach_LockerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0BC1E1C3DD20096E565 /* MyCoach_LockerTests.swift */; };
+		7A63B0C81E1C3DD20096E565 /* MyCoach_LockerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0C71E1C3DD20096E565 /* MyCoach_LockerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A63B0B91E1C3DD20096E565 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A63B09C1E1C3DD10096E565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A63B0A31E1C3DD10096E565;
+			remoteInfo = "MyCoach Locker";
+		};
+		7A63B0C41E1C3DD20096E565 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A63B09C1E1C3DD10096E565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A63B0A31E1C3DD10096E565;
+			remoteInfo = "MyCoach Locker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7A63B0A41E1C3DD10096E565 /* MyCoach Locker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyCoach Locker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A63B0A71E1C3DD10096E565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A63B0A91E1C3DD10096E565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7A63B0AC1E1C3DD10096E565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7A63B0AE1E1C3DD10096E565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A63B0B11E1C3DD10096E565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A63B0B31E1C3DD10096E565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A63B0B81E1C3DD20096E565 /* MyCoach LockerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyCoach LockerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A63B0BC1E1C3DD20096E565 /* MyCoach_LockerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoach_LockerTests.swift; sourceTree = "<group>"; };
+		7A63B0BE1E1C3DD20096E565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A63B0C31E1C3DD20096E565 /* MyCoach LockerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyCoach LockerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A63B0C71E1C3DD20096E565 /* MyCoach_LockerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoach_LockerUITests.swift; sourceTree = "<group>"; };
+		7A63B0C91E1C3DD20096E565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A63B0A11E1C3DD10096E565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A63B0B51E1C3DD20096E565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A63B0C01E1C3DD20096E565 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A63B09B1E1C3DD10096E565 = {
+			isa = PBXGroup;
+			children = (
+				7A63B0A61E1C3DD10096E565 /* MyCoach Locker */,
+				7A63B0BB1E1C3DD20096E565 /* MyCoach LockerTests */,
+				7A63B0C61E1C3DD20096E565 /* MyCoach LockerUITests */,
+				7A63B0A51E1C3DD10096E565 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7A63B0A51E1C3DD10096E565 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A63B0A41E1C3DD10096E565 /* MyCoach Locker.app */,
+				7A63B0B81E1C3DD20096E565 /* MyCoach LockerTests.xctest */,
+				7A63B0C31E1C3DD20096E565 /* MyCoach LockerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A63B0A61E1C3DD10096E565 /* MyCoach Locker */ = {
+			isa = PBXGroup;
+			children = (
+				7A63B0A71E1C3DD10096E565 /* AppDelegate.swift */,
+				7A63B0A91E1C3DD10096E565 /* ViewController.swift */,
+				7A63B0AB1E1C3DD10096E565 /* Main.storyboard */,
+				7A63B0AE1E1C3DD10096E565 /* Assets.xcassets */,
+				7A63B0B01E1C3DD10096E565 /* LaunchScreen.storyboard */,
+				7A63B0B31E1C3DD10096E565 /* Info.plist */,
+			);
+			path = "MyCoach Locker";
+			sourceTree = "<group>";
+		};
+		7A63B0BB1E1C3DD20096E565 /* MyCoach LockerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A63B0BC1E1C3DD20096E565 /* MyCoach_LockerTests.swift */,
+				7A63B0BE1E1C3DD20096E565 /* Info.plist */,
+			);
+			path = "MyCoach LockerTests";
+			sourceTree = "<group>";
+		};
+		7A63B0C61E1C3DD20096E565 /* MyCoach LockerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7A63B0C71E1C3DD20096E565 /* MyCoach_LockerUITests.swift */,
+				7A63B0C91E1C3DD20096E565 /* Info.plist */,
+			);
+			path = "MyCoach LockerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A63B0A31E1C3DD10096E565 /* MyCoach Locker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A63B0CC1E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach Locker" */;
+			buildPhases = (
+				7A63B0A01E1C3DD10096E565 /* Sources */,
+				7A63B0A11E1C3DD10096E565 /* Frameworks */,
+				7A63B0A21E1C3DD10096E565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MyCoach Locker";
+			productName = "MyCoach Locker";
+			productReference = 7A63B0A41E1C3DD10096E565 /* MyCoach Locker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7A63B0B71E1C3DD20096E565 /* MyCoach LockerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A63B0CF1E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach LockerTests" */;
+			buildPhases = (
+				7A63B0B41E1C3DD20096E565 /* Sources */,
+				7A63B0B51E1C3DD20096E565 /* Frameworks */,
+				7A63B0B61E1C3DD20096E565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A63B0BA1E1C3DD20096E565 /* PBXTargetDependency */,
+			);
+			name = "MyCoach LockerTests";
+			productName = "MyCoach LockerTests";
+			productReference = 7A63B0B81E1C3DD20096E565 /* MyCoach LockerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7A63B0C21E1C3DD20096E565 /* MyCoach LockerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A63B0D21E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach LockerUITests" */;
+			buildPhases = (
+				7A63B0BF1E1C3DD20096E565 /* Sources */,
+				7A63B0C01E1C3DD20096E565 /* Frameworks */,
+				7A63B0C11E1C3DD20096E565 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A63B0C51E1C3DD20096E565 /* PBXTargetDependency */,
+			);
+			name = "MyCoach LockerUITests";
+			productName = "MyCoach LockerUITests";
+			productReference = 7A63B0C31E1C3DD20096E565 /* MyCoach LockerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A63B09C1E1C3DD10096E565 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = rplay;
+				TargetAttributes = {
+					7A63B0A31E1C3DD10096E565 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					7A63B0B71E1C3DD20096E565 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7A63B0A31E1C3DD10096E565;
+					};
+					7A63B0C21E1C3DD20096E565 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7A63B0A31E1C3DD10096E565;
+					};
+				};
+			};
+			buildConfigurationList = 7A63B09F1E1C3DD10096E565 /* Build configuration list for PBXProject "MyCoach Locker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A63B09B1E1C3DD10096E565;
+			productRefGroup = 7A63B0A51E1C3DD10096E565 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A63B0A31E1C3DD10096E565 /* MyCoach Locker */,
+				7A63B0B71E1C3DD20096E565 /* MyCoach LockerTests */,
+				7A63B0C21E1C3DD20096E565 /* MyCoach LockerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A63B0A21E1C3DD10096E565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A63B0B21E1C3DD10096E565 /* LaunchScreen.storyboard in Resources */,
+				7A63B0AF1E1C3DD10096E565 /* Assets.xcassets in Resources */,
+				7A63B0AD1E1C3DD10096E565 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A63B0B61E1C3DD20096E565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A63B0C11E1C3DD20096E565 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A63B0A01E1C3DD10096E565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */,
+				7A63B0A81E1C3DD10096E565 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A63B0B41E1C3DD20096E565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A63B0BD1E1C3DD20096E565 /* MyCoach_LockerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A63B0BF1E1C3DD20096E565 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A63B0C81E1C3DD20096E565 /* MyCoach_LockerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A63B0BA1E1C3DD20096E565 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A63B0A31E1C3DD10096E565 /* MyCoach Locker */;
+			targetProxy = 7A63B0B91E1C3DD20096E565 /* PBXContainerItemProxy */;
+		};
+		7A63B0C51E1C3DD20096E565 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A63B0A31E1C3DD10096E565 /* MyCoach Locker */;
+			targetProxy = 7A63B0C41E1C3DD20096E565 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7A63B0AB1E1C3DD10096E565 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A63B0AC1E1C3DD10096E565 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7A63B0B01E1C3DD10096E565 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A63B0B11E1C3DD10096E565 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A63B0CA1E1C3DD20096E565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7A63B0CB1E1C3DD20096E565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A63B0CD1E1C3DD20096E565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "MyCoach Locker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-Locker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		7A63B0CE1E1C3DD20096E565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "MyCoach Locker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-Locker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7A63B0D01E1C3DD20096E565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "MyCoach LockerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-LockerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCoach Locker.app/MyCoach Locker";
+			};
+			name = Debug;
+		};
+		7A63B0D11E1C3DD20096E565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "MyCoach LockerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-LockerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyCoach Locker.app/MyCoach Locker";
+			};
+			name = Release;
+		};
+		7A63B0D31E1C3DD20096E565 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "MyCoach LockerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-LockerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "MyCoach Locker";
+			};
+			name = Debug;
+		};
+		7A63B0D41E1C3DD20096E565 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = "MyCoach LockerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-LockerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "MyCoach Locker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A63B09F1E1C3DD10096E565 /* Build configuration list for PBXProject "MyCoach Locker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A63B0CA1E1C3DD20096E565 /* Debug */,
+				7A63B0CB1E1C3DD20096E565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A63B0CC1E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach Locker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A63B0CD1E1C3DD20096E565 /* Debug */,
+				7A63B0CE1E1C3DD20096E565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7A63B0CF1E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach LockerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A63B0D01E1C3DD20096E565 /* Debug */,
+				7A63B0D11E1C3DD20096E565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7A63B0D21E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach LockerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A63B0D31E1C3DD20096E565 /* Debug */,
+				7A63B0D41E1C3DD20096E565 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A63B09C1E1C3DD10096E565 /* Project object */;
+}
