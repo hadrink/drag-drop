@@ -33,4 +33,13 @@ class MyCoach_LockerTests: XCTestCase {
         }
     }
     
+    func testUpdatePositionsOfAFootballPlayer() {
+        let footballPlayerPositions: Array<FootballPosition> = [.att, .moc]
+        let footballPlayer = FootballPlayer(name: "Michel", age: 44, positions: footballPlayerPositions)
+        let newFootballPlayerPostions: Array<FootballPosition> = [.att, .att]
+        
+        footballPlayer.updatePositions(positions: newFootballPlayerPostions)
+        XCTAssertEqual(footballPlayer.positions as! Array<FootballPosition>, newFootballPlayerPostions)
+    }
+    
 }
