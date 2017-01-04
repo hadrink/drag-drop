@@ -24,6 +24,7 @@
 		7A63B0E91E1C46AB0096E565 /* FootballTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0E81E1C46AB0096E565 /* FootballTeam.swift */; };
 		7A63B0EB1E1C46EF0096E565 /* FootballTactical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */; };
 		7A63B0ED1E1C496E0096E565 /* MyCoach_LockerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0BC1E1C3DD20096E565 /* MyCoach_LockerTests.swift */; };
+		7ACF64EB1E1D97DB0077E074 /* FootballPreMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		7A63B0E51E1C465B0096E565 /* FootballPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballPlayer.swift; sourceTree = "<group>"; };
 		7A63B0E81E1C46AB0096E565 /* FootballTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballTeam.swift; sourceTree = "<group>"; };
 		7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballTactical.swift; sourceTree = "<group>"; };
+		7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballPreMatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				7A63B0E31E1C462E0096E565 /* FootballComposition.swift */,
 				7A63B0E81E1C46AB0096E565 /* FootballTeam.swift */,
 				7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */,
+				7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */,
 			);
 			name = Football;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				7A63B0EB1E1C46EF0096E565 /* FootballTactical.swift in Sources */,
 				7A63B0DC1E1C44DE0096E565 /* Tactical.swift in Sources */,
 				7A63B0A81E1C3DD10096E565 /* AppDelegate.swift in Sources */,
+				7ACF64EB1E1D97DB0077E074 /* FootballPreMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +571,7 @@
 				7A63B0CE1E1C3DD20096E565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A63B0CF1E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach LockerTests" */ = {
 			isa = XCConfigurationList;
@@ -575,6 +580,7 @@
 				7A63B0D11E1C3DD20096E565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7A63B0D21E1C3DD20096E565 /* Build configuration list for PBXNativeTarget "MyCoach LockerUITests" */ = {
 			isa = XCConfigurationList;
@@ -583,6 +589,7 @@
 				7A63B0D41E1C3DD20096E565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

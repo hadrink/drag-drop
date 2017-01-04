@@ -11,38 +11,39 @@ import Foundation
 class FootballTactical: Tactical {
     var team: Team
     var composition: Composition
-    var playersPosition: Dictionary<String, Array<Player>>
+    var playersPositionForTheMatch: Dictionary<String, Array<Player>>?
     
     init(team: Team, composition: Composition) {
         self.team = team
         self.composition = composition
-        self.playersPosition = [:]
-        self.updatePlayersPosition(players: team.players!)
+        self.playersPositionForTheMatch = [:]
+        self.setDefaultPlayersPosition(players: team.players!)
     }
     
     func switchComposition(composition: Composition) {
         self.composition = composition
     }
     
-    func switchPlayer(player1: Player?, player2: Player?) {
-        for(position, playersArray) in playersPosition {
+    public func switchPlayer(player1: Player?, player2: Player?) {
+        for(position, playersArray) in playersPositionForTheMatch! {
             for player in playersArray {
                 if player.name == player1?.name {
-                    playersPosition[position]?.append(player2!)
-                    let index = playersPosition[position]?.index(where: {$0.name == player1?.name})
-                    playersPosition[position]?.remove(at: index!)
+                    playersPositionForTheMatch?[position]?.append(player2!)
+                    let index = playersPositionForTheMatch?[position]?.index(where: {$0.name == player1?.name})
+                    playersPositionForTheMatch?[position]?.remove(at: index!)
                 }
                 
                 if player.name == player2?.name {
-                    playersPosition[position]?.append(player1!)
-                    let index = playersPosition[position]?.index(where: {$0.name == player2?.name})
-                    playersPosition[position]?.remove(at: index!)
+                    playersPositionForTheMatch?[position]?.append(player1!)
+                    let index = playersPositionForTheMatch?[position]?.index(where: {$0.name == player2?.name})
+                    playersPositionForTheMatch?[position]?.remove(at: index!)
                 }
             }
         }
     }
+
     
-    private func updatePlayersPosition(players: Array<Player>) {
+    private func setDefaultPlayersPosition(players: Array<Player>) {
         let composition = self.composition as! FootballComposition
         let allPlacementsInComposition = composition.compositionPerCase()
         let footballTeam: FootballTeam = self.team as! FootballTeam
@@ -171,9 +172,9 @@ class FootballTactical: Tactical {
     }
     
     private func addplayerPerPosition(position: FootballPosition, footballPlayer: FootballPlayer) {
-        playersPosition[position.rawValue] == nil ?
-        playersPosition[position.rawValue] = [footballPlayer] :
-        playersPosition[position.rawValue]?.append(footballPlayer)
+        self.playersPositionForTheMatch?[position.rawValue] == nil ?
+        self.playersPositionForTheMatch?[position.rawValue] = [footballPlayer] :
+        self.playersPositionForTheMatch?[position.rawValue]?.append(footballPlayer)
     }
     
     private func countsPositionInComposition() -> Dictionary<FootballPosition, Int> {

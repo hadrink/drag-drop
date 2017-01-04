@@ -13,5 +13,5 @@ protocol Tactical {
     var composition: Composition {get set}
     
     func switchComposition(composition: Composition)
-    func switchPlayer(player1: Player?, player2: Player?)
+    //func switchPlayer(player1: Player?, player2: Player?)
 }
