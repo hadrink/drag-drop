@@ -20,4 +20,30 @@ enum FootballComposition: String, Composition {
             return [.att, .moc, .mg]
         }
     }
+    
+    /** VIEW Representation
+     
+     --------------------------
+     | A1 | A2 | A3 | A4 | A5 |
+     --------------------------
+     | B1 | B2 | B3 | B4 | B5 |
+     --------------------------
+     | C1 | C2 | C3 | C4 | C5 |
+     --------------------------
+     | D1 | D2 | D3 | D4 | D5 |
+     --------------------------
+     | E1 | E2 | E3 | E4 | E5 |
+     --------------------------
+     | F1 | F2 | F3 | F4 | F5 |
+     --------------------------
+     */
+    
+    func positionPerComposition() -> Dictionary<FootballPosition, FootballGridPosition> {
+        switch self {
+        case .fourfourtwo:
+            return [.att : .A3]
+        case .fourthreetwoone:
+            return [.att : .A3]
+        }
+    }
 }
