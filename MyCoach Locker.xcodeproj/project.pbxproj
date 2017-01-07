@@ -27,6 +27,10 @@
 		7ACF64EB1E1D97DB0077E074 /* FootballPreMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */; };
 		7ACF64EE1E2036C00077E074 /* FootballCompositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */; };
 		7ACF64F01E203D100077E074 /* FootballGridPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64EF1E203D100077E074 /* FootballGridPosition.swift */; };
+		7ACF64F21E2187590077E074 /* FootballerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F11E2187590077E074 /* FootballerContainerView.swift */; };
+		7ACF64F41E2187B40077E074 /* FootballerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F31E2187B40077E074 /* FootballerCardView.swift */; };
+		7ACF64F61E2193D80077E074 /* FootballTacticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F51E2193D80077E074 /* FootballTacticalView.swift */; };
+		7ACF64F81E2199060077E074 /* PlayersBenchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 		7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballPreMatch.swift; sourceTree = "<group>"; };
 		7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballCompositionView.swift; sourceTree = "<group>"; };
 		7ACF64EF1E203D100077E074 /* FootballGridPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballGridPosition.swift; sourceTree = "<group>"; };
+		7ACF64F11E2187590077E074 /* FootballerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballerContainerView.swift; sourceTree = "<group>"; };
+		7ACF64F31E2187B40077E074 /* FootballerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballerCardView.swift; sourceTree = "<group>"; };
+		7ACF64F51E2193D80077E074 /* FootballTacticalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballTacticalView.swift; sourceTree = "<group>"; };
+		7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +183,12 @@
 		7A63B0E71E1C46850096E565 /* Football */ = {
 			isa = PBXGroup;
 			children = (
+				7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */,
+				7ACF64F51E2193D80077E074 /* FootballTacticalView.swift */,
+				7ACF64F11E2187590077E074 /* FootballerContainerView.swift */,
+				7ACF64F31E2187B40077E074 /* FootballerCardView.swift */,
+				7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */,
 				7A63B0D81E1C44910096E565 /* Protocols */,
-				7A63B0E51E1C465B0096E565 /* FootballPlayer.swift */,
 				7ACF64EC1E20366C0077E074 /* controllers */,
 			);
 			name = Football;
@@ -185,13 +197,13 @@
 		7ACF64EC1E20366C0077E074 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A63B0E51E1C465B0096E565 /* FootballPlayer.swift */,
 				7A63B0DD1E1C45720096E565 /* FootballPosition.swift */,
 				7A63B0E31E1C462E0096E565 /* FootballComposition.swift */,
 				7A63B0E81E1C46AB0096E565 /* FootballTeam.swift */,
 				7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */,
 				7ACF64EF1E203D100077E074 /* FootballGridPosition.swift */,
 				7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */,
-				7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -330,16 +342,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ACF64F21E2187590077E074 /* FootballerContainerView.swift in Sources */,
 				7ACF64F01E203D100077E074 /* FootballGridPosition.swift in Sources */,
 				7A63B0E21E1C45A10096E565 /* Composition.swift in Sources */,
+				7ACF64F41E2187B40077E074 /* FootballerCardView.swift in Sources */,
 				7A63B0E61E1C465B0096E565 /* FootballPlayer.swift in Sources */,
 				7A63B0E91E1C46AB0096E565 /* FootballTeam.swift in Sources */,
+				7ACF64F81E2199060077E074 /* PlayersBenchCollectionView.swift in Sources */,
 				7A63B0E01E1C45970096E565 /* Position.swift in Sources */,
 				7A63B0DA1E1C44BC0096E565 /* Player.swift in Sources */,
 				7A63B0E41E1C462E0096E565 /* FootballComposition.swift in Sources */,
 				7A63B0D71E1C44210096E565 /* Team.swift in Sources */,
 				7ACF64EE1E2036C00077E074 /* FootballCompositionView.swift in Sources */,
 				7A63B0DE1E1C45720096E565 /* FootballPosition.swift in Sources */,
+				7ACF64F61E2193D80077E074 /* FootballTacticalView.swift in Sources */,
 				7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */,
 				7A63B0EB1E1C46EF0096E565 /* FootballTactical.swift in Sources */,
 				7A63B0DC1E1C44DE0096E565 /* Tactical.swift in Sources */,
