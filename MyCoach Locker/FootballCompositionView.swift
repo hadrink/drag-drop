@@ -16,7 +16,7 @@ class FootballCompositionView: UIView {
     init(frame: CGRect, composition: FootballComposition) {
         self.composition = composition
         super.init(frame: frame)
-        self.displayContainersOnView(composition: composition)
+        self.displayContainersOnView()
         
     }
     
@@ -24,23 +24,24 @@ class FootballCompositionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayContainersOnView(composition: FootballComposition) {
+    func displayContainersOnView() {
         let positionPerComposition = composition.positionPerComposition()
         
         for position in positionPerComposition {
             let footballPosition = position.key
-            let footballGridPosition = position.value
+            let footballGridPositions = position.value
             
-            let footballContainerViewPosition = positionOnGrid(compositionView: self, positionOnGrid: footballGridPosition)
-            let footballContainerViewFrame = CGRect(x: footballContainerViewPosition.x, y: footballContainerViewPosition.y, width: 0, height: 0)
-            let footballerContainerView = FootballerContainerView(frame: footballContainerViewFrame, position: footballPosition, player: nil)
-            
-            self.playersContainer == nil ? self.playersContainer = [footballerContainerView] : self.playersContainer?.append(footballerContainerView)
-            self.addSubview(footballerContainerView)
+            for footballGridPosition in footballGridPositions {
+                let footballContainerViewPosition = positionOnGrid(compositionView: self, positionOnGrid: footballGridPosition)
+                let footballContainerViewFrame = CGRect(x: footballContainerViewPosition.x, y: footballContainerViewPosition.y, width: 0, height: 0)
+                let footballerContainerView = FootballerContainerView(frame: footballContainerViewFrame, position: footballPosition, player: nil)
+                
+                self.playersContainer == nil ? self.playersContainer = [footballerContainerView] : self.playersContainer?.append(footballerContainerView)
+                self.addSubview(footballerContainerView)
+            }
         }
     }
     
-    func fillContainers
     
     func positionOnGrid(compositionView: UIView, positionOnGrid: FootballGridPosition) -> CGPoint {
         let viewHeight = compositionView.frame.height
@@ -176,9 +177,9 @@ class FootballCompositionView: UIView {
         case .H3:
             return CGPoint(x: (blockWidth * 3) - blockWidthCenter , y: blockHeight * 8)
         case .H4:
-            return CGPoint(x: (blockWidth * 4) - blockWidthCenter , y: blockHeight * 8)
+            return CGPoint(x: compositionView.frame.width / 2 , y: blockHeight * 8)
         case .H5:
-            return CGPoint(x: (blockWidth * 5) - blockWidthCenter , y: blockHeight * 8)
+            return CGPoint(x: compositionView.frame.width / 2 , y: blockHeight * 8)
         case .H6:
             return CGPoint(x: (blockWidth * 6) - blockWidthCenter , y: blockHeight * 8)
         case .H7:

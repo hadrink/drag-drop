@@ -17,6 +17,16 @@ class FootballerContainerView: UIView {
         self.player = player
         self.position = position
         super.init(frame: frame)
+        self.designView()
+    }
+    
+    func designView() {
+        self.frame.size.width  = 80
+        self.frame.size.height = 120
+        self.frame.origin.x  -= self.frame.width / 2
+        self.frame.origin.y -= self.frame.height
+        self.backgroundColor = UIColor.black
+        self.layer.cornerRadius = 4.0
     }
     
     required init?(coder aDecoder: NSCoder) {

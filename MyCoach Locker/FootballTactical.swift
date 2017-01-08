@@ -131,6 +131,13 @@ class FootballTactical: Tactical {
                 
                 addplayerPerPosition(position: .dd, footballPlayer: playerToAdd)
                 players = removePickedPlayerFromAnArray(playerToRemove: playerToAdd, players: players)
+            case .gk:
+                guard let playerToAdd = pickAPlayerPerPosition(position: .gk, team: players) else {
+                    break
+                }
+                
+                addplayerPerPosition(position: .gk, footballPlayer: playerToAdd)
+                players = removePickedPlayerFromAnArray(playerToRemove: playerToAdd, players: players)
                 
             case .remp:
                 guard let playerToAdd = pickAPlayerPerPosition(position: nil, team: players) else {

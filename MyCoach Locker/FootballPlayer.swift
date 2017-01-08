@@ -13,6 +13,7 @@ class FootballPlayer: Player {
     var age: Int
     var positions: Array<Position>
     var team: Team?
+    var photoPath: String?
     
     init(name: String, age: Int, positions: Array<Position>) {
         self.name = name

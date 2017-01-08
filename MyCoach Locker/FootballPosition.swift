@@ -19,5 +19,6 @@ enum FootballPosition: String, Position {
     case dg
     case dc
     case dd
+    case gk
     case remp
 }

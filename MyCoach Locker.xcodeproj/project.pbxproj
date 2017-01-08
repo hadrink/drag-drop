@@ -29,8 +29,9 @@
 		7ACF64F01E203D100077E074 /* FootballGridPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64EF1E203D100077E074 /* FootballGridPosition.swift */; };
 		7ACF64F21E2187590077E074 /* FootballerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F11E2187590077E074 /* FootballerContainerView.swift */; };
 		7ACF64F41E2187B40077E074 /* FootballerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F31E2187B40077E074 /* FootballerCardView.swift */; };
-		7ACF64F61E2193D80077E074 /* FootballTacticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F51E2193D80077E074 /* FootballTacticalView.swift */; };
 		7ACF64F81E2199060077E074 /* PlayersBenchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */; };
+		7ACF64FC1E224F040077E074 /* PlayersBenchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */; };
+		7ACF64FE1E2281D20077E074 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64FD1E2281D20077E074 /* FakeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +80,9 @@
 		7ACF64EF1E203D100077E074 /* FootballGridPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballGridPosition.swift; sourceTree = "<group>"; };
 		7ACF64F11E2187590077E074 /* FootballerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballerContainerView.swift; sourceTree = "<group>"; };
 		7ACF64F31E2187B40077E074 /* FootballerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballerCardView.swift; sourceTree = "<group>"; };
-		7ACF64F51E2193D80077E074 /* FootballTacticalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballTacticalView.swift; sourceTree = "<group>"; };
 		7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionView.swift; sourceTree = "<group>"; };
+		7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionViewCell.swift; sourceTree = "<group>"; };
+		7ACF64FD1E2281D20077E074 /* FakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,9 @@
 			children = (
 				7A63B0A71E1C3DD10096E565 /* AppDelegate.swift */,
 				7A63B0A91E1C3DD10096E565 /* ViewController.swift */,
+				7ACF64FD1E2281D20077E074 /* FakeData.swift */,
+				7ACF64F91E224C650077E074 /* Models */,
+				7ACF64FA1E224CBC0077E074 /* Views */,
 				7A63B0D51E1C3DE50096E565 /* Controllers */,
 				7A63B0AB1E1C3DD10096E565 /* Main.storyboard */,
 				7A63B0AE1E1C3DD10096E565 /* Assets.xcassets */,
@@ -163,7 +168,9 @@
 		7A63B0D51E1C3DE50096E565 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7A63B0E71E1C46850096E565 /* Football */,
+				7A63B0D81E1C44910096E565 /* Protocols */,
+				7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */,
+				7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -180,32 +187,28 @@
 			name = Protocols;
 			sourceTree = "<group>";
 		};
-		7A63B0E71E1C46850096E565 /* Football */ = {
-			isa = PBXGroup;
-			children = (
-				7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */,
-				7ACF64F51E2193D80077E074 /* FootballTacticalView.swift */,
-				7ACF64F11E2187590077E074 /* FootballerContainerView.swift */,
-				7ACF64F31E2187B40077E074 /* FootballerCardView.swift */,
-				7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */,
-				7A63B0D81E1C44910096E565 /* Protocols */,
-				7ACF64EC1E20366C0077E074 /* controllers */,
-			);
-			name = Football;
-			sourceTree = "<group>";
-		};
-		7ACF64EC1E20366C0077E074 /* controllers */ = {
+		7ACF64F91E224C650077E074 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				7A63B0E51E1C465B0096E565 /* FootballPlayer.swift */,
 				7A63B0DD1E1C45720096E565 /* FootballPosition.swift */,
 				7A63B0E31E1C462E0096E565 /* FootballComposition.swift */,
 				7A63B0E81E1C46AB0096E565 /* FootballTeam.swift */,
-				7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */,
 				7ACF64EF1E203D100077E074 /* FootballGridPosition.swift */,
-				7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */,
 			);
-			name = controllers;
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7ACF64FA1E224CBC0077E074 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */,
+				7ACF64F11E2187590077E074 /* FootballerContainerView.swift */,
+				7ACF64F31E2187B40077E074 /* FootballerCardView.swift */,
+				7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */,
+				7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +279,7 @@
 				TargetAttributes = {
 					7A63B0A31E1C3DD10096E565 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 356ZH6XUVH;
 						ProvisioningStyle = Automatic;
 					};
 					7A63B0B71E1C3DD20096E565 = {
@@ -343,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7ACF64F21E2187590077E074 /* FootballerContainerView.swift in Sources */,
+				7ACF64FC1E224F040077E074 /* PlayersBenchCollectionViewCell.swift in Sources */,
 				7ACF64F01E203D100077E074 /* FootballGridPosition.swift in Sources */,
 				7A63B0E21E1C45A10096E565 /* Composition.swift in Sources */,
 				7ACF64F41E2187B40077E074 /* FootballerCardView.swift in Sources */,
@@ -355,7 +360,7 @@
 				7A63B0D71E1C44210096E565 /* Team.swift in Sources */,
 				7ACF64EE1E2036C00077E074 /* FootballCompositionView.swift in Sources */,
 				7A63B0DE1E1C45720096E565 /* FootballPosition.swift in Sources */,
-				7ACF64F61E2193D80077E074 /* FootballTacticalView.swift in Sources */,
+				7ACF64FE1E2281D20077E074 /* FakeData.swift in Sources */,
 				7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */,
 				7A63B0EB1E1C46EF0096E565 /* FootballTactical.swift in Sources */,
 				7A63B0DC1E1C44DE0096E565 /* Tactical.swift in Sources */,
@@ -510,11 +515,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 356ZH6XUVH;
 				INFOPLIST_FILE = "MyCoach Locker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-Locker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -522,11 +529,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 356ZH6XUVH;
 				INFOPLIST_FILE = "MyCoach Locker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rplay.MyCoach-Locker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

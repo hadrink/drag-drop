@@ -15,7 +15,7 @@ enum FootballComposition: String, Composition {
     func compositionPerCase() -> Array<FootballPosition> {
         switch self {
         case .fourfourtwo:
-            return [.att, .att, .mg, .md, .mc, .mc, .dg, .dc, .dc, .dd, .remp, .remp, .remp, .remp, .remp]
+            return [.att, .att, .mg, .md, .mc, .mc, .dg, .dc, .dc, .dd, .gk, .remp, .remp, .remp, .remp, .remp]
         case .fourthreetwoone:
             return [.att, .moc, .mg]
         }
@@ -44,12 +44,12 @@ enum FootballComposition: String, Composition {
      -----------------------------------------
      */
     
-    func positionPerComposition() -> Dictionary<FootballPosition, FootballGridPosition> {
+    func positionPerComposition() -> Dictionary<FootballPosition, Array<FootballGridPosition>> {
         switch self {
         case .fourfourtwo:
-            return [.att : .A3, .att : .A6, .mg : .D1, .md : .D8, .mc : .E3, .mc : .E6, .dg : .F1, .dc : .G3, .dc : .G6, .dd : .F8]
+            return [.att : [.A3, .A6], .mg : [.C1], .md : [.C8], .mc : [.D3, .D6], .dg : [.F1], .dc : [.G3, .G6], .dd : [.F8], .gk : [.H4]]
         case .fourthreetwoone:
-            return [.att : .A3]
+            return [.att : [.A3]]
         }
     }
 }

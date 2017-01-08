@@ -7,11 +7,34 @@
 //
 
 import Foundation
+import UIKit
 
-class FootballerCardView {
+class FootballerCardView: UIView {
     var player: FootballPlayer
+    var name: UILabel?
+    var imageView: UIImageView?
     
-    init(player: FootballPlayer) {
+    init(player: FootballPlayer, size: CGSize) {
         self.player = player
+        super.init(frame: CGRect(x: 0, y: 0, width: size.width , height: size.height))
+        self.displayPlayerPhoto()
+    }
+    
+    func displayPlayerPhoto() {
+        guard let photo =  self.player.photoPath else {
+            return
+        }
+        
+        imageView = UIImageView()
+        imageView?.frame = self.frame
+        imageView?.layer.masksToBounds = true
+        imageView?.contentMode = .scaleAspectFill
+        imageView?.image = UIImage(named: photo)
+        imageView?.layer.cornerRadius = 4.0
+        self.addSubview(imageView!)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
