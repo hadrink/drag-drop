@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 
-class PlayersBenchCollectionViewCell: UICollectionViewCell {
+class PlayersBenchCollectionViewCell: UICollectionViewCell, DraggableArea {
     var footballerCardView: FootballerCardView?
+    var draggableView: Draggable?
+    
+    func setDraggableView(draggableView: Draggable) {
+        self.draggableView = draggableView
+        
+        guard let draggableView = draggableView as? UIView else {
+            return
+        }
+        
+        draggableView.frame.origin = CGPoint(x: 0, y: 0)
+        self.addSubview(draggableView)
+    }
+
 }

@@ -15,6 +15,12 @@ class ViewController: UIViewController {
     var playerCardViews: Array<FootballerCardView> = []
     var fakeData = FakeData()
     
+    
+    
+    
+    var draggableManager: DraggableManager?
+
+    
     let cardSize = CGSize(width: 80, height: 120)
 
     override func viewDidLoad() {
@@ -44,6 +50,12 @@ class ViewController: UIViewController {
         
         
         self.fillPlayerCardViews()
+        
+        self.draggableManager = DraggableManager(mainView: self.view)
+        self.draggableManager?.delegate = self
+        
+        // test draggable
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -51,6 +63,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     func fillPlayerCardViews() {
         for player in fakeData.fakeTeam.players! {
@@ -74,6 +87,7 @@ extension ViewController: UICollectionViewDataSource {
         print(playerCardViews[indexPath.row])
         cell.footballerCardView = playerCardViews[indexPath.row]
         cell.addSubview(playerCardViews[indexPath.row])
+        cell.footballerCardView?.resetPosition()
         cell.backgroundColor = UIColor.purple
         cell.frame.size = cardSize
         cell.layer.cornerRadius = 4.0
@@ -84,7 +98,17 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    
-    
+}
+
+extension ViewController: DraggableManagerDelegate {
+    internal func draggableViewDidCancel(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DraggableArea) {
+
+    }
+
+    func draggableViewDidDrag(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DraggableArea) {
+        
+        
+        
+    }
 }
 

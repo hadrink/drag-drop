@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FootballerCardView: UIView {
+class FootballerCardView: UIView, Draggable {
     var player: FootballPlayer
     var name: UILabel?
     var imageView: UIImageView?
@@ -33,6 +33,22 @@ class FootballerCardView: UIView {
         imageView?.layer.cornerRadius = 4.0
         self.addSubview(imageView!)
     }
+    
+    func setPosition(position: CGPoint) {
+        
+        
+        self.frame.origin.x += position.x
+        self.frame.origin.y += position.y
+        
+        print("Frame \(self.frame)")
+        print("Image Frame \(self.imageView?.frame)")
+        print("Card position \(position)")
+    }
+    
+    func resetPosition() {
+        self.frame.origin = CGPoint(x: 0, y: 0);
+    }
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

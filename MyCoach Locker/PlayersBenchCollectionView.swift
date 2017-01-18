@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class PlayersBenchCollectionView: UICollectionView {
+    
     init(frame: CGRect) {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
