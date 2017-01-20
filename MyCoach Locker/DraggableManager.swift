@@ -58,9 +58,15 @@ class DraggableManager {
         if let draggableViewArea = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (viewIsDragging as! UIView).center) {
             self.dropInDraggableArea(draggableView: viewIsDragging, draggableViewArea: draggableViewArea)
             return
-        } else {
-            self.dropIsCanceled(draggableView: viewIsDragging, oldDraggableViewArea: self.oldDraggableViewArea)
         }
+        
+        if let draggableView = self.checkDraggableViewIsTouched(pressGesturePosition: (viewIsDragging as! UIView).center) {
+            self.dropAndReplaceDraggableView(newDraggableView: draggableView, oldDraggableView: viewIsDragging)
+            return
+        }
+        
+        self.dropIsCanceled(draggableView: viewIsDragging, oldDraggableViewArea: self.oldDraggableViewArea)
+
     }
     
     /** Drop dragglable view in a draggable area
@@ -84,13 +90,9 @@ class DraggableManager {
             (newDraggableView as! UIView).frame.origin = (oldDraggableView as! UIView).superview!.convert((oldDraggableView as! UIView).frame.origin, to: self.mainView)
         }, completion: { completed in
             
-            guard let draggableArea = (oldDraggableView as! UIView).superview as? DraggableArea else {
-                return
-            }
-            
-            (newDraggableView as! UIView).removeFromSuperview()
-            draggableArea.setDraggableView(draggableView: newDraggableView)
-            self.viewIsDragging = nil
+            /** TODO:
+                - replace draggable view found with view is dragging
+            */
         })
     }
     
@@ -143,7 +145,9 @@ class DraggableManager {
     - Returns: Draggable
     */
     func checkDraggableViewIsTouched(pressGesturePosition: CGPoint) -> Draggable? {
+        print(pressGesturePosition)
         let viewTouched = mainView.hitTest(point: pressGesturePosition, with: nil, viewToIgnore: viewIsDragging as? UIView)
+        viewTouched?.backgroundColor = UIColor.red
         print("Press gesture at start \(viewTouched)")
         guard let draggableView = viewTouched as? Draggable else {
             return nil
