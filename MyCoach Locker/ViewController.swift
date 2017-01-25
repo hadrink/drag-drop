@@ -84,6 +84,14 @@ extension ViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath as IndexPath) as! PlayersBenchCollectionViewCell
         
+        /** TODO
+         - Add player Ar
+        */
+        
+        for view in cell.subviews {
+            view.removeFromSuperview()
+        }
+        
         print(playerCardViews[indexPath.row])
         cell.footballerCardView = playerCardViews[indexPath.row]
         cell.addSubview(playerCardViews[indexPath.row])
@@ -91,6 +99,7 @@ extension ViewController: UICollectionViewDataSource {
         cell.backgroundColor = UIColor.purple
         cell.frame.size = cardSize
         cell.layer.cornerRadius = 4.0
+        
         
         return cell
     }

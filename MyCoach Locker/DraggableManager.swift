@@ -44,6 +44,8 @@ class DraggableManager {
         self.mainView.addSubview((viewDraggleIsTouched as! UIView))
         (viewDraggleIsTouched as! UIView).center = newCenter
         self.positionViewAtStart = newCenter
+        self.oldDraggableViewArea = checkDraggleViewHintDragglableArea(draggableViewPosition: (viewDraggleIsTouched as! UIView).center)
+        
     }
     
     func handleDrag(gestureTranslation: CGPoint, draggableView: Draggable) {
@@ -80,20 +82,41 @@ class DraggableManager {
         }, completion: { completed in
             (draggableView as! UIView).removeFromSuperview()
             draggableViewArea.setDraggableView(draggableView: draggableView)
-            self.oldDraggableViewArea = draggableViewArea
             self.viewIsDragging = nil
         })
     }
     
     func dropAndReplaceDraggableView(newDraggableView: Draggable, oldDraggableView: Draggable) {
+        
+        (newDraggableView as! UIView).center = (newDraggableView as! UIView).superview!.convert((newDraggableView as! UIView).center, to: self.mainView)
+        
+        // remove new view from this subview.
+        (newDraggableView as! UIView).removeFromSuperview()
+        
+        // Add new view in mainView
+        self.mainView.addSubview((newDraggableView as! UIView))
+        
+        let newDraggableViewCenter = (newDraggableView as! UIView).center
+        let oldDraggableAreaCenter = (self.oldDraggableViewArea as! UIView).superview!.convert((self.oldDraggableViewArea as! UIView).center, to: self.mainView)
+        
         UIView.animate(withDuration: 0.5, animations: {
-            (newDraggableView as! UIView).frame.origin = (oldDraggableView as! UIView).superview!.convert((oldDraggableView as! UIView).frame.origin, to: self.mainView)
+            (newDraggableView as! UIView).center = oldDraggableAreaCenter
+            (oldDraggableView as! UIView).center = newDraggableViewCenter
         }, completion: { completed in
+            guard let draggableAreaHitByNewDraggableView = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (newDraggableView as! UIView).center) else {
+                return
+            }
             
-            /** TODO:
-                - replace draggable view found with view is dragging
-            */
+            draggableAreaHitByNewDraggableView.setDraggableView(draggableView: newDraggableView)
+            
+            guard let draggableAreaHitByOldDraggableView = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (newDraggableView as! UIView).center) else {
+                return
+            }
+            
+            draggableAreaHitByOldDraggableView.setDraggableView(draggableView: oldDraggableView)
+            
         })
+        
     }
     
     /** Called when the drop is canceled 
