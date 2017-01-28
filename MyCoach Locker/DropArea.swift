@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DraggableArea {
+protocol DropArea {
     var draggableView: Draggable? { get set }
     func setDraggableView(draggableView: Draggable)
 }

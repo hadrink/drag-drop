@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class FootballerContainerView: UIView, DraggableArea {
+class FootballerContainerView: UIView, DropArea {
     var player: FootballerCardView?
     var position: FootballPosition
     var draggableView: Draggable?

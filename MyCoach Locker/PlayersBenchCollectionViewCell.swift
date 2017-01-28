@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 
-class PlayersBenchCollectionViewCell: UICollectionViewCell, DraggableArea {
+class PlayersBenchCollectionViewCell: UICollectionViewCell, DropArea {
     var footballerCardView: FootballerCardView?
     var draggableView: Draggable?
     
     func setDraggableView(draggableView: Draggable) {
         self.draggableView = draggableView
+        print(draggableView)
         
         guard let draggableView = draggableView as? UIView else {
             return

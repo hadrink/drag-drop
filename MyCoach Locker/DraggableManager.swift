@@ -11,8 +11,8 @@ import UIKit
 
 
 protocol DraggableManagerDelegate {
-    func draggableViewDidDrag(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DraggableArea)
-    func draggableViewDidCancel(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DraggableArea)
+    func draggableViewDidDrag(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DropArea)
+    func draggableViewDidCancel(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DropArea)
 }
 
 class DraggableManager {
@@ -20,9 +20,9 @@ class DraggableManager {
     var viewIsDragging: Draggable?
     var oldLocation = CGPoint(x: 0, y: 0)
     var delegate: DraggableManagerDelegate?
-    var positionViewAtStart: CGPoint?
+    //var positionViewAtStart: CGPoint?
     var longPressGestureRecognizer: UILongPressGestureRecognizer
-    var oldDraggableViewArea: DraggableArea?
+    var oldDraggableViewArea: DropArea?
 
     
     init(mainView: UIView) {
@@ -43,7 +43,7 @@ class DraggableManager {
         let newCenter = (viewDraggleIsTouched as! UIView).convert((viewDraggleIsTouched as! UIView).center, to: self.mainView)
         self.mainView.addSubview((viewDraggleIsTouched as! UIView))
         (viewDraggleIsTouched as! UIView).center = newCenter
-        self.positionViewAtStart = newCenter
+       // self.positionViewAtStart = newCenter
         self.oldDraggableViewArea = checkDraggleViewHintDragglableArea(draggableViewPosition: (viewDraggleIsTouched as! UIView).center)
         
     }
@@ -68,7 +68,6 @@ class DraggableManager {
         }
         
         self.dropIsCanceled(draggableView: viewIsDragging, oldDraggableViewArea: self.oldDraggableViewArea)
-
     }
     
     /** Drop dragglable view in a draggable area
@@ -76,24 +75,15 @@ class DraggableManager {
     - parameter draggableView: Draggable in mouvement
     - parameter draggableViewArea: The draggable view area to drop the draggable view
     */
-    func dropInDraggableArea(draggableView: Draggable, draggableViewArea: DraggableArea) {
-        UIView.animate(withDuration: 0.5, animations: {
-            (draggableView as! UIView).center = (draggableViewArea as! UIView).superview!.convert((draggableViewArea as! UIView).center, to: self.mainView)
-        }, completion: { completed in
-            (draggableView as! UIView).removeFromSuperview()
-            draggableViewArea.setDraggableView(draggableView: draggableView)
-            self.viewIsDragging = nil
-        })
+    func dropInDraggableArea(draggableView: Draggable, draggableViewArea: DropArea) {
+        draggableViewArea.setDraggableView(draggableView: draggableView)
+        self.viewIsDragging = nil
     }
     
     func dropAndReplaceDraggableView(newDraggableView: Draggable, oldDraggableView: Draggable) {
         
         (newDraggableView as! UIView).center = (newDraggableView as! UIView).superview!.convert((newDraggableView as! UIView).center, to: self.mainView)
         
-        // remove new view from this subview.
-        (newDraggableView as! UIView).removeFromSuperview()
-        
-        // Add new view in mainView
         self.mainView.addSubview((newDraggableView as! UIView))
         
         let newDraggableViewCenter = (newDraggableView as! UIView).center
@@ -103,17 +93,17 @@ class DraggableManager {
             (newDraggableView as! UIView).center = oldDraggableAreaCenter
             (oldDraggableView as! UIView).center = newDraggableViewCenter
         }, completion: { completed in
-            guard let draggableAreaHitByNewDraggableView = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (newDraggableView as! UIView).center) else {
+            
+            //(newDraggableView as! UIView).removeFromSuperview()
+            
+            print((oldDraggableView as! UIView).center)
+            guard let draggableAreaHitByNewDraggableView = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (oldDraggableView as! UIView).center) else {
                 return
             }
             
-            draggableAreaHitByNewDraggableView.setDraggableView(draggableView: newDraggableView)
+            self.dropInDraggableArea(draggableView: oldDraggableView, draggableViewArea: draggableAreaHitByNewDraggableView)
             
-            guard let draggableAreaHitByOldDraggableView = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (newDraggableView as! UIView).center) else {
-                return
-            }
-            
-            draggableAreaHitByOldDraggableView.setDraggableView(draggableView: oldDraggableView)
+            self.dropInDraggableArea(draggableView: newDraggableView, draggableViewArea: self.oldDraggableViewArea!)
             
         })
         
@@ -126,12 +116,12 @@ class DraggableManager {
      
     - Returns: DraggableArea
     */
-    func dropIsCanceled(draggableView: Draggable, oldDraggableViewArea: DraggableArea?) {
+    func dropIsCanceled(draggableView: Draggable, oldDraggableViewArea: DropArea?) {
         guard let oldDraggableViewArea = oldDraggableViewArea else {
             UIView.animate(withDuration: 0.5, animations: {
-                (draggableView as! UIView).center = self.getPositionViewAtStart()!
+               // (draggableView as! UIView).center = self.getPositionViewAtStart()!
             }, completion: { completed in
-                (draggableView as! UIView).center = self.getPositionViewAtStart()!
+                //(draggableView as! UIView).center = self.getPositionViewAtStart()!
                 guard let draggableArea = self.checkDraggleViewHintDragglableArea(draggableViewPosition: (draggableView as! UIView).center) else {
                     return
                 }
@@ -151,10 +141,10 @@ class DraggableManager {
      
     - Returns: DraggableArea
     */
-    func checkDraggleViewHintDragglableArea(draggableViewPosition: CGPoint) -> DraggableArea? {
+    func checkDraggleViewHintDragglableArea(draggableViewPosition: CGPoint) -> DropArea? {
         let viewTouched = self.mainView.hitTest(point: draggableViewPosition, with: nil, viewToIgnore: (self.viewIsDragging as! UIView))
         
-        guard let viewTouchedAsDraggableArea = viewTouched as? DraggableArea else {
+        guard let viewTouchedAsDraggableArea = viewTouched as? DropArea else {
             return nil
         }
             
@@ -180,7 +170,7 @@ class DraggableManager {
     }
     
     
-    func getPositionViewAtStart() -> CGPoint? {
+   /* func getPositionViewAtStart() -> CGPoint? {
         guard let positionViewAtStart = self.positionViewAtStart else {
             return nil
         }
@@ -190,7 +180,7 @@ class DraggableManager {
     
     func savePositionViewAtStart(position: CGPoint) {
         self.positionViewAtStart = position
-    }
+    }*/
     
     @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
         let state = gestureReconizer.state

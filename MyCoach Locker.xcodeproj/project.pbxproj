@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7A2A1D841E26D1B50059E453 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A1D831E26D1B50059E453 /* DraggableView.swift */; };
-		7A2A1D861E26D1EF0059E453 /* DraggableArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A1D851E26D1EF0059E453 /* DraggableArea.swift */; };
+		7A2A1D841E26D1B50059E453 /* Draggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A1D831E26D1B50059E453 /* Draggable.swift */; };
+		7A2A1D861E26D1EF0059E453 /* DropArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A1D851E26D1EF0059E453 /* DropArea.swift */; };
 		7A2A1D881E26D23C0059E453 /* DraggableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2A1D871E26D23C0059E453 /* DraggableManager.swift */; };
 		7A63B0A81E1C3DD10096E565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0A71E1C3DD10096E565 /* AppDelegate.swift */; };
 		7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A63B0A91E1C3DD10096E565 /* ViewController.swift */; };
@@ -35,6 +35,8 @@
 		7ACF64F81E2199060077E074 /* PlayersBenchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */; };
 		7ACF64FC1E224F040077E074 /* PlayersBenchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */; };
 		7ACF64FE1E2281D20077E074 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64FD1E2281D20077E074 /* FakeData.swift */; };
+		7AFB501A1E3D3D44004F5D76 /* DraggableEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB50191E3D3D44004F5D76 /* DraggableEvents.swift */; };
+		7AFB501C1E3D4462004F5D76 /* DraggableAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB501B1E3D4462004F5D76 /* DraggableAnimations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7A2A1D831E26D1B50059E453 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
-		7A2A1D851E26D1EF0059E453 /* DraggableArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableArea.swift; sourceTree = "<group>"; };
+		7A2A1D831E26D1B50059E453 /* Draggable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Draggable.swift; sourceTree = "<group>"; };
+		7A2A1D851E26D1EF0059E453 /* DropArea.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropArea.swift; sourceTree = "<group>"; };
 		7A2A1D871E26D23C0059E453 /* DraggableManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableManager.swift; sourceTree = "<group>"; };
 		7A63B0A41E1C3DD10096E565 /* MyCoach Locker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyCoach Locker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A63B0A71E1C3DD10096E565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionView.swift; sourceTree = "<group>"; };
 		7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionViewCell.swift; sourceTree = "<group>"; };
 		7ACF64FD1E2281D20077E074 /* FakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
+		7AFB50191E3D3D44004F5D76 /* DraggableEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableEvents.swift; sourceTree = "<group>"; };
+		7AFB501B1E3D4462004F5D76 /* DraggableAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableAnimations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 				7A63B0D81E1C44910096E565 /* Protocols */,
 				7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */,
 				7A2A1D871E26D23C0059E453 /* DraggableManager.swift */,
+				7AFB50191E3D3D44004F5D76 /* DraggableEvents.swift */,
+				7AFB501B1E3D4462004F5D76 /* DraggableAnimations.swift */,
 				7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */,
 			);
 			name = Controllers;
@@ -210,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				7ACF64ED1E2036C00077E074 /* FootballCompositionView.swift */,
-				7A2A1D831E26D1B50059E453 /* DraggableView.swift */,
-				7A2A1D851E26D1EF0059E453 /* DraggableArea.swift */,
+				7A2A1D831E26D1B50059E453 /* Draggable.swift */,
+				7A2A1D851E26D1EF0059E453 /* DropArea.swift */,
 				7ACF64F11E2187590077E074 /* FootballerContainerView.swift */,
 				7ACF64F31E2187B40077E074 /* FootballerCardView.swift */,
 				7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */,
@@ -355,12 +361,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A2A1D841E26D1B50059E453 /* DraggableView.swift in Sources */,
+				7A2A1D841E26D1B50059E453 /* Draggable.swift in Sources */,
 				7ACF64F21E2187590077E074 /* FootballerContainerView.swift in Sources */,
 				7ACF64FC1E224F040077E074 /* PlayersBenchCollectionViewCell.swift in Sources */,
 				7ACF64F01E203D100077E074 /* FootballGridPosition.swift in Sources */,
 				7A63B0E21E1C45A10096E565 /* Composition.swift in Sources */,
 				7ACF64F41E2187B40077E074 /* FootballerCardView.swift in Sources */,
+				7AFB501C1E3D4462004F5D76 /* DraggableAnimations.swift in Sources */,
 				7A63B0E61E1C465B0096E565 /* FootballPlayer.swift in Sources */,
 				7A63B0E91E1C46AB0096E565 /* FootballTeam.swift in Sources */,
 				7ACF64F81E2199060077E074 /* PlayersBenchCollectionView.swift in Sources */,
@@ -369,7 +376,7 @@
 				7A63B0E41E1C462E0096E565 /* FootballComposition.swift in Sources */,
 				7A63B0D71E1C44210096E565 /* Team.swift in Sources */,
 				7ACF64EE1E2036C00077E074 /* FootballCompositionView.swift in Sources */,
-				7A2A1D861E26D1EF0059E453 /* DraggableArea.swift in Sources */,
+				7A2A1D861E26D1EF0059E453 /* DropArea.swift in Sources */,
 				7A63B0DE1E1C45720096E565 /* FootballPosition.swift in Sources */,
 				7ACF64FE1E2281D20077E074 /* FakeData.swift in Sources */,
 				7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */,
@@ -377,6 +384,7 @@
 				7A2A1D881E26D23C0059E453 /* DraggableManager.swift in Sources */,
 				7A63B0DC1E1C44DE0096E565 /* Tactical.swift in Sources */,
 				7A63B0A81E1C3DD10096E565 /* AppDelegate.swift in Sources */,
+				7AFB501A1E3D3D44004F5D76 /* DraggableEvents.swift in Sources */,
 				7ACF64EB1E1D97DB0077E074 /* FootballPreMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

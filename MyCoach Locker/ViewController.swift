@@ -110,11 +110,11 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 extension ViewController: DraggableManagerDelegate {
-    internal func draggableViewDidCancel(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DraggableArea) {
+    internal func draggableViewDidCancel(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DropArea) {
 
     }
 
-    func draggableViewDidDrag(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DraggableArea) {
+    func draggableViewDidDrag(draggableTouched draggableView: Draggable, draggableAreaTouched draggableArea: DropArea) {
         
         
         
