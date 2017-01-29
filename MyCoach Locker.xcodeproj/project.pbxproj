@@ -35,8 +35,9 @@
 		7ACF64F81E2199060077E074 /* PlayersBenchCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */; };
 		7ACF64FC1E224F040077E074 /* PlayersBenchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */; };
 		7ACF64FE1E2281D20077E074 /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACF64FD1E2281D20077E074 /* FakeData.swift */; };
-		7AFB501A1E3D3D44004F5D76 /* DraggableEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB50191E3D3D44004F5D76 /* DraggableEvents.swift */; };
+		7AFB501A1E3D3D44004F5D76 /* DraggableEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB50191E3D3D44004F5D76 /* DraggableEvent.swift */; };
 		7AFB501C1E3D4462004F5D76 /* DraggableAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB501B1E3D4462004F5D76 /* DraggableAnimations.swift */; };
+		7AFB501E1E3E4CA7004F5D76 /* DraggableManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFB501D1E3E4CA7004F5D76 /* DraggableManagerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +92,9 @@
 		7ACF64F71E2199060077E074 /* PlayersBenchCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionView.swift; sourceTree = "<group>"; };
 		7ACF64FB1E224F040077E074 /* PlayersBenchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersBenchCollectionViewCell.swift; sourceTree = "<group>"; };
 		7ACF64FD1E2281D20077E074 /* FakeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
-		7AFB50191E3D3D44004F5D76 /* DraggableEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableEvents.swift; sourceTree = "<group>"; };
+		7AFB50191E3D3D44004F5D76 /* DraggableEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableEvent.swift; sourceTree = "<group>"; };
 		7AFB501B1E3D4462004F5D76 /* DraggableAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableAnimations.swift; sourceTree = "<group>"; };
+		7AFB501D1E3E4CA7004F5D76 /* DraggableManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +183,8 @@
 				7A63B0D81E1C44910096E565 /* Protocols */,
 				7A63B0EA1E1C46EF0096E565 /* FootballTactical.swift */,
 				7A2A1D871E26D23C0059E453 /* DraggableManager.swift */,
-				7AFB50191E3D3D44004F5D76 /* DraggableEvents.swift */,
+				7AFB501D1E3E4CA7004F5D76 /* DraggableManagerTest.swift */,
+				7AFB50191E3D3D44004F5D76 /* DraggableEvent.swift */,
 				7AFB501B1E3D4462004F5D76 /* DraggableAnimations.swift */,
 				7ACF64EA1E1D97DB0077E074 /* FootballPreMatch.swift */,
 			);
@@ -378,13 +381,14 @@
 				7ACF64EE1E2036C00077E074 /* FootballCompositionView.swift in Sources */,
 				7A2A1D861E26D1EF0059E453 /* DropArea.swift in Sources */,
 				7A63B0DE1E1C45720096E565 /* FootballPosition.swift in Sources */,
+				7AFB501E1E3E4CA7004F5D76 /* DraggableManagerTest.swift in Sources */,
 				7ACF64FE1E2281D20077E074 /* FakeData.swift in Sources */,
 				7A63B0AA1E1C3DD10096E565 /* ViewController.swift in Sources */,
 				7A63B0EB1E1C46EF0096E565 /* FootballTactical.swift in Sources */,
 				7A2A1D881E26D23C0059E453 /* DraggableManager.swift in Sources */,
 				7A63B0DC1E1C44DE0096E565 /* Tactical.swift in Sources */,
 				7A63B0A81E1C3DD10096E565 /* AppDelegate.swift in Sources */,
-				7AFB501A1E3D3D44004F5D76 /* DraggableEvents.swift in Sources */,
+				7AFB501A1E3D3D44004F5D76 /* DraggableEvent.swift in Sources */,
 				7ACF64EB1E1D97DB0077E074 /* FootballPreMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

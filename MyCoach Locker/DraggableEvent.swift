@@ -9,8 +9,7 @@
 import Foundation
 import UIKit
 
-class DraggableEvents {
-    
+class DraggableEvent {
     var mainView: UIView
     var viewIsDragging: Draggable?
     var oldDropArea: DropArea?
@@ -19,7 +18,26 @@ class DraggableEvents {
         self.mainView = mainView
     }
     
-    /** Drop dragglable view in a draggable area
+    func activeDrag(position: CGPoint) -> Bool {
+        guard let viewDraggleIsTouched = self.draggableHitTest(pressGesturePosition: position) else {
+            return false
+        }
+        
+        self.viewIsDragging = viewDraggleIsTouched
+        self.oldDropArea = self.dropAreaHitTest(draggableViewPosition: position)
+        return true
+    }
+    
+    /** Drag a draggableView
+     
+    - parameter translation: New position.
+    - parameter draggableView: View to Drag.
+    */
+    func drag(translation: CGPoint, draggableView: Draggable) {
+        draggableView.setPosition(position: translation)
+    }
+    
+    /** Drop dragglable view in a drop area
      
      - parameter draggableView: Draggable in mouvement
      - parameter draggableViewArea: The draggable view area to drop the draggable view
@@ -34,7 +52,7 @@ class DraggableEvents {
      - parameter draggableView: Draggable in mouvement
      - parameter oldDraggableViewArea: The old draggable view area
      */
-    func dropIsCanceled(draggableView: Draggable, oldDraggableViewArea: DropArea?) {
+    func cancelDrop(draggableView: Draggable, oldDraggableViewArea: DropArea?) {
         guard let oldDraggableViewArea = oldDraggableViewArea else {
             return
         }
@@ -94,5 +112,24 @@ class DraggableEvents {
             self.drop(draggableView: newDraggableView, draggableViewArea: self.oldDropArea!)
         })
         
+    }
+    
+    func swap(newDraggableView: Draggable, oldDraggableView: Draggable) {
+        guard let dropAreaHitByNewDraggableView = self.dropAreaHitTest(draggableViewPosition: (oldDraggableView as! UIView).center) else {
+            return
+        }
+        
+        self.drop(draggableView: oldDraggableView, draggableViewArea: dropAreaHitByNewDraggableView)
+        self.drop(draggableView: newDraggableView, draggableViewArea: self.oldDropArea!)
+    }
+}
+
+extension UIView {
+    func centerConvertedTo(view: UIView) -> CGPoint {
+        guard let superview = self.superview else {
+            return CGPoint(x: 0, y: 0)
+        }
+        
+        return superview.convert(self.center, to: view)
     }
 }
