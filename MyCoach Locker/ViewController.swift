@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     
     
     
-    var draggableManager: DraggableManager?
+    var draggableManager: DraggableManagerTest?
+    var draggableHandler: DraggableHandler?
 
     
     let cardSize = CGSize(width: 80, height: 120)
@@ -51,8 +52,7 @@ class ViewController: UIViewController {
         
         self.fillPlayerCardViews()
         
-        self.draggableManager = DraggableManager(mainView: self.view)
-        self.draggableManager?.delegate = self
+        self.draggableHandler = DraggableHandler(view: self.view)
         
         // test draggable
 

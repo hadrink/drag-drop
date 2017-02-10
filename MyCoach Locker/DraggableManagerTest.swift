@@ -16,29 +16,33 @@ enum DraggableEventState {
 }
 
 class DraggableHandler {
-    var longPressGestureRecognizer: UILongPressGestureRecognizer
     var oldLocation = CGPoint(x: 0, y: 0)
-    var draggableManager: DraggableManagerTest?
+    var draggableManager: DraggableManagerTest
 
-    init(longPressGesture: UILongPressGestureRecognizer, view: UIView) {
-        self.longPressGestureRecognizer = longPressGesture
-        self.longPressGestureRecognizer = UILongPressGestureRecognizer(target: self , action: #selector(handleLongPress))
-        longPressGestureRecognizer.minimumPressDuration = 0.5
+    init(view: UIView) {
+        self.draggableManager = DraggableManagerTest(view: view)
+        self.addLongPressGesture(onView: view)
     }
     
-    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+    func addLongPressGesture(onView view: UIView) {
+        let longPressGesture = UILongPressGestureRecognizer(target: self , action: #selector(self.handleLongPress(gestureReconizer:)))
+        longPressGesture.minimumPressDuration = 0.5
+        view.addGestureRecognizer(longPressGesture)
+    }
+    
+    dynamic func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
         let state = gestureReconizer.state
-        let gesturePosition = gestureReconizer.location(in: draggableManager?.mainView)
+        let gesturePosition = gestureReconizer.location(in: draggableManager.event.mainView)
         let gestureTranslation = CGPoint(x: gesturePosition.x - self.oldLocation.x, y: gesturePosition.y - self.oldLocation.y)
         self.oldLocation = gesturePosition
         
         switch state {
         case .began:
-            self.draggableManager?.handle(draggableState: .began, position: gesturePosition)
+            self.draggableManager.handle(draggableState: .began, position: gesturePosition)
         case .changed:
-            self.draggableManager?.handle(draggableState: .changed, position: gesturePosition)
+            self.draggableManager.handle(draggableState: .changed, position: gestureTranslation)
         case .ended:
-            self.draggableManager?.handle(draggableState: .ended, position: gesturePosition)
+            self.draggableManager.handle(draggableState: .ended, position: gesturePosition)
         default:
             print("default")
         }
