@@ -86,7 +86,10 @@ class DraggableManagerTest {
         }
         
         if let draggableViewArea = self.event.dropAreaHitTest(draggableViewPosition: (viewIsDragging as! UIView).center) {
-            self.event.drop(draggableView: viewIsDragging, draggableViewArea: draggableViewArea)
+            DraggableAnimations.dropAnimation(draggableView: viewIsDragging, dropArea: draggableViewArea, completion: { completed in
+                self.event.drop(draggableView: viewIsDragging, draggableViewArea: draggableViewArea)
+            })
+            
             return
         }
         

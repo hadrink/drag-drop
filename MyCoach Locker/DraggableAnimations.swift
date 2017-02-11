@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+extension DropArea where Self: UIView {
+    func convertedCenterTo(draggableView: Draggable) -> CGPoint {
+        return self.superview!.convert(self.center, to: (draggableView as! UIView).superview!)
+    }
+}
+
 struct DraggableAnimations {
     
     /**
@@ -19,8 +25,11 @@ struct DraggableAnimations {
      - parameter completion: Called when animation is completed.
     */
     static func dropAnimation(draggableView: Draggable, dropArea: DropArea, completion: @escaping (Bool) -> ()) {
+        
+        //TODO: Return completion false when convertedCenterTo failed
+        
         UIView.animate(withDuration: 0.5, animations: {
-            (draggableView as? UIView)?.center = (dropArea as? UIView)!.center
+            (draggableView as? UIView)?.center = dropArea.convertedCenterTo(draggableView: draggableView)
         }, completion: { completed in
             completion(true)
         })
