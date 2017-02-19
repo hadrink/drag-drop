@@ -17,6 +17,8 @@ extension DropArea where Self: UIView {
 
 struct DraggableAnimations {
     
+    var viewIsSwappingPositionAtStart: CGPoint
+    
     /**
      Animation for a drop action.
      
@@ -42,13 +44,10 @@ struct DraggableAnimations {
      - parameter oldDropArea: old drop area.
      - parameter completion: Called when animation is completed.
     */
-    static func cancelDropAnimation(draggableView: Draggable, oldDropArea: DropArea, completion:((Bool) -> ())?) {
-        guard let oldDropAreaCenter = (oldDropArea as? UIView)?.center else {
-            return
-        }
+    static func cancelDropAnimation(draggableView: Draggable, oldPosition: CGPoint, completion:((Bool) -> ())?) {
         
         UIView.animate(withDuration: 0.5, animations: {
-            (draggableView as? UIView)?.center = oldDropAreaCenter
+            (draggableView as? UIView)?.center = oldPosition
         }, completion: { completed in
             completion!(true)
         })
@@ -60,18 +59,12 @@ struct DraggableAnimations {
      - parameter draggableView: Draggable view touched by the other draggable view.
      - parameter oldDropArea: Old drop area.
     */
-    static func swapAnimation(draggableView: Draggable, oldDropArea: Draggable, completion: @escaping (Bool, _ resetPosition: CGPoint) -> ()) {
-        guard let draggableViewCenterTmp = (draggableView as? UIView)?.center else {
-            return
-        }
-        guard let oldDropAreaCenter = (oldDropArea as? UIView)?.center else {
-            return
-        }
+    static func swapAnimation(draggableView: Draggable, oldDropArea: DropArea, completion: @escaping (Bool) -> ()) {
+       (oldDropArea as! UIView).backgroundColor = UIColor.red
+       (draggableView as! UIView).backgroundColor = UIColor.blue
         
-        UIView.animate(withDuration: 0.5, animations: {
-            (draggableView as? UIView)?.center = oldDropAreaCenter
-        }, completion: { completed in
-            completion(true, draggableViewCenterTmp)
+        self.dropAnimation(draggableView: draggableView, dropArea: oldDropArea, completion: { completed in
+            completion(completed)
         })
     }
     
@@ -85,7 +78,7 @@ struct DraggableAnimations {
      - parameter completion: Called when the animation is completed.
     */
     static func cancelSwapAnimation(oldSwappedDraggableViewPosition: CGPoint, swappedDraggableView: Draggable, draggedView: Draggable, oldDropArea: DropArea, completion: @escaping (Bool) ->()) {
-        self.cancelDropAnimation(draggableView: draggedView, oldDropArea: oldDropArea, completion: nil)
+        //self.cancelDropAnimation(draggableView: draggedView, oldDropArea: oldDropArea, completion: nil)
         UIView.animate(withDuration: 0.5, animations: {
             (swappedDraggableView as? UIView)?.center = oldSwappedDraggableViewPosition
         }, completion: { completed in

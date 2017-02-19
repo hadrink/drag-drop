@@ -95,10 +95,12 @@ extension ViewController: UICollectionViewDataSource {
         print(playerCardViews[indexPath.row])
         cell.footballerCardView = playerCardViews[indexPath.row]
         cell.addSubview(playerCardViews[indexPath.row])
-        cell.footballerCardView?.resetPosition()
+        //cell.footballerCardView?.resetPosition()
         cell.backgroundColor = UIColor.purple
         cell.frame.size = cardSize
         cell.layer.cornerRadius = 4.0
+        
+        playerCardViews[indexPath.row].dropArea = cell
         
         
         return cell

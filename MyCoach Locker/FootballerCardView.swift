@@ -12,6 +12,7 @@ import UIKit
 class FootballerCardView: UIView, Draggable {
     var player: FootballPlayer
     var name: UILabel?
+    var dropArea: DropArea?
     var imageView: UIImageView?
     
     init(player: FootballPlayer, size: CGSize) {
@@ -35,14 +36,8 @@ class FootballerCardView: UIView, Draggable {
     }
     
     func setPosition(position: CGPoint) {
-        
-        
         self.frame.origin.x += position.x
         self.frame.origin.y += position.y
-        
-        print("Frame \(self.frame)")
-        print("Image Frame \(self.imageView?.frame)")
-        print("Card position \(position)")
     }
     
     func resetPosition() {

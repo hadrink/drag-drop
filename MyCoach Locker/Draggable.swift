@@ -10,5 +10,6 @@ import Foundation
 import UIKit
 
 protocol Draggable {
+    var dropArea: DropArea? { get set }
     func setPosition(position: CGPoint)
 }
