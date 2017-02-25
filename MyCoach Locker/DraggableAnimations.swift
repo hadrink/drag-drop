@@ -59,12 +59,12 @@ struct DraggableAnimations {
      - parameter draggableView: Draggable view touched by the other draggable view.
      - parameter oldDropArea: Old drop area.
     */
-    static func swapAnimation(draggableView: Draggable, oldDropArea: DropArea, completion: @escaping (Bool) -> ()) {
+    static func swapAnimation(draggableView: Draggable, oldDropArea: DropArea, completion: @escaping (Bool, Draggable, DropArea) -> ()) {
        (oldDropArea as! UIView).backgroundColor = UIColor.red
        (draggableView as! UIView).backgroundColor = UIColor.blue
         
         self.dropAnimation(draggableView: draggableView, dropArea: oldDropArea, completion: { completed in
-            completion(completed)
+            completion(completed, draggableView, oldDropArea)
         })
     }
     

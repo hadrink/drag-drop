@@ -44,7 +44,7 @@ class DraggableEvent {
      */
     func drop(draggableView: Draggable, draggableViewArea: DropArea) {
         draggableViewArea.setDraggableView(draggableView: draggableView)
-        self.viewIsDragging = nil
+        //self.viewIsDragging = nil
     }
     
     /** Called when the drop is canceled
