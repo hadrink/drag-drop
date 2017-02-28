@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class PlayersBenchCollectionViewCell: UICollectionViewCell, DropArea {
+    var position: FootballPosition?
     var footballerCardView: FootballerCardView?
     var draggableView: Draggable?
     

@@ -17,7 +17,9 @@ class FakeData {
         let footballPlayer1 = FootballPlayer(name: "Mario", age: 24, positions: [FootballPosition.att])
         footballPlayer1.photoPath = "balo"
         let footballPlayer2 = FootballPlayer(name: "Rémy", age: 26, positions: [FootballPosition.att])
+        footballPlayer2.photoPath = "lebihan"
         let footballPlayer3 = FootballPlayer(name: "Paul", age: 26, positions: [FootballPosition.att])
+        footballPlayer3.photoPath = "plea"
         let footballPlayer4 = FootballPlayer(name: "Robert", age: 26, positions: [FootballPosition.mg])
         let footballPlayer5 = FootballPlayer(name: "Marc", age: 28, positions: [FootballPosition.mg])
         let footballPlayer6 = FootballPlayer(name: "Kévin", age: 28, positions: [FootballPosition.md])

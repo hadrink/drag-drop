@@ -142,7 +142,7 @@ class DraggableManager {
     - Returns: DraggableArea
     */
     func checkDraggleViewHintDragglableArea(draggableViewPosition: CGPoint) -> DropArea? {
-        let viewTouched = self.mainView.hitTest(point: draggableViewPosition, with: nil, viewToIgnore: (self.viewIsDragging as! UIView))
+        let viewTouched = self.mainView.hitTest(point: draggableViewPosition, with: nil, viewToIgnore: [(self.viewIsDragging as! UIView)])
         
         guard let viewTouchedAsDraggableArea = viewTouched as? DropArea else {
             return nil
@@ -159,7 +159,7 @@ class DraggableManager {
     */
     func checkDraggableViewIsTouched(pressGesturePosition: CGPoint) -> Draggable? {
         print(pressGesturePosition)
-        let viewTouched = mainView.hitTest(point: pressGesturePosition, with: nil, viewToIgnore: viewIsDragging as? UIView)
+        let viewTouched = mainView.hitTest(point: pressGesturePosition, with: nil, viewToIgnore: [viewIsDragging as? UIView])
         viewTouched?.backgroundColor = UIColor.red
         print("Press gesture at start \(viewTouched)")
         guard let draggableView = viewTouched as? Draggable else {
@@ -216,14 +216,14 @@ extension UIView {
      
     - Returns: UIView
     */
-    func hitTest(point: CGPoint, with event: UIEvent?, viewToIgnore: UIView?) -> UIView? {
+    func hitTest(point: CGPoint, with event: UIEvent?, viewToIgnore: Array<UIView?>?) -> UIView? {
         guard let viewToIgnore = viewToIgnore else {
             return self.hitTest(point, with: event)
         }
         
-        viewToIgnore.isUserInteractionEnabled = false
+        viewToIgnore.forEach({$0?.isUserInteractionEnabled = false})
         let viewFound = self.hitTest(point, with: event)
-        viewToIgnore.isUserInteractionEnabled = true
+        viewToIgnore.forEach({$0?.isUserInteractionEnabled = true})
         
         return viewFound
     }

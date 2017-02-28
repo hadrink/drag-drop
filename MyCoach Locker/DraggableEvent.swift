@@ -12,6 +12,8 @@ import UIKit
 class DraggableEvent {
     var mainView: UIView
     var viewIsDragging: Draggable?
+    var viewSwapped: Draggable?
+    var viewSwappedArea: DropArea?
     var oldDropArea: DropArea?
     
     init(mainView: UIView) {
@@ -22,9 +24,10 @@ class DraggableEvent {
         guard let viewDraggleIsTouched = self.draggableHitTest(pressGesturePosition: position) else {
             return false
         }
-        
+                
         self.viewIsDragging = viewDraggleIsTouched
         self.oldDropArea = self.dropAreaHitTest(draggableViewPosition: position)
+        print("Update old drop area")
         return true
     }
     
@@ -44,7 +47,6 @@ class DraggableEvent {
      */
     func drop(draggableView: Draggable, draggableViewArea: DropArea) {
         draggableViewArea.setDraggableView(draggableView: draggableView)
-        //self.viewIsDragging = nil
     }
     
     /** Called when the drop is canceled
@@ -67,7 +69,7 @@ class DraggableEvent {
      - Returns: DropArea
      */
     func dropAreaHitTest(draggableViewPosition: CGPoint) -> DropArea? {
-        let viewTouched = self.mainView.hitTest(point: draggableViewPosition, with: nil, viewToIgnore: (self.viewIsDragging as! UIView))
+        let viewTouched = self.mainView.hitTest(point: draggableViewPosition, with: nil, viewToIgnore: [(self.viewIsDragging as! UIView), self.viewSwapped as? UIView])
         guard let viewTouchedAsDraggableArea = viewTouched as? DropArea else {
             return nil
         }
@@ -82,7 +84,7 @@ class DraggableEvent {
      - Returns: Draggable
      */
     func draggableHitTest(pressGesturePosition: CGPoint) -> Draggable? {
-        let viewTouched = mainView.hitTest(point: pressGesturePosition, with: nil, viewToIgnore: viewIsDragging as? UIView)
+        let viewTouched = mainView.hitTest(point: pressGesturePosition, with: nil, viewToIgnore: [viewIsDragging as? UIView])
         guard let draggableView = viewTouched as? Draggable else {
             return nil
         }

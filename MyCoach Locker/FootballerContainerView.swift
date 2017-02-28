@@ -11,7 +11,7 @@ import UIKit
 
 class FootballerContainerView: UIView, DropArea {
     var player: FootballerCardView?
-    var position: FootballPosition
+    var position: FootballPosition?
     var draggableView: Draggable?
     
     init(frame: CGRect, position: FootballPosition, player: FootballerCardView?) {

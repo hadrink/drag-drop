@@ -21,6 +21,10 @@ class FootballerCardView: UIView, Draggable {
         self.displayPlayerPhoto()
     }
     
+    func setDropArea(dropArea: DropArea) {
+        self.dropArea = dropArea
+    }
+    
     func displayPlayerPhoto() {
         guard let photo =  self.player.photoPath else {
             return

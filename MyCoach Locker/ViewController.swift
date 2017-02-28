@@ -100,8 +100,12 @@ extension ViewController: UICollectionViewDataSource {
         cell.frame.size = cardSize
         cell.layer.cornerRadius = 4.0
         
-        playerCardViews[indexPath.row].dropArea = cell
+        if indexPath.row < 5 {
+            cell.position = .remp
+            cell.backgroundColor = UIColor.yellow
+        }
         
+        playerCardViews[indexPath.row].dropArea = cell
         
         return cell
     }
