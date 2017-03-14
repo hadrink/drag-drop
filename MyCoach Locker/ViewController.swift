@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     var draggableHandler: DraggableHandler?
 
     
-    let cardSize = CGSize(width: 80, height: 120)
+    let cardSize = CGSize(width: 60, height: 100)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,7 +14,7 @@ class PlayersBenchCollectionView: UICollectionView {
     init(frame: CGRect) {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 10
-        layout.itemSize = CGSize(width: 80, height: 120)
+        layout.itemSize = CGSize(width: 60, height: 100)
         layout.scrollDirection = .horizontal
         super.init(frame: frame, collectionViewLayout: layout)
     }

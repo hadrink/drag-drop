@@ -22,8 +22,8 @@ class FootballerContainerView: UIView, DropArea {
     }
     
     func designView() {
-        self.frame.size.width  = 80
-        self.frame.size.height = 120
+        self.frame.size.width  = 60
+        self.frame.size.height = 100
         self.frame.origin.x -= self.frame.width / 2
         self.frame.origin.y -= self.frame.height
         self.backgroundColor = UIColor.black

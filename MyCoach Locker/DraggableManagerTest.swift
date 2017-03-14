@@ -52,7 +52,7 @@ class DraggableHandler {
 class DraggableManagerTest {
     
     var event: DraggableEvent
-    var animationCompleted: Bool = true
+    var animationCompleted: (resetSwap: Bool , swap: Bool) = (true, true)
     
     init(view: UIView) {
         self.event = DraggableEvent(mainView: view)
@@ -82,34 +82,37 @@ class DraggableManagerTest {
         //FIXME: Add swapped cell in cell view after animation completed
         event.drag(translation: translation, draggableView: self.event.viewIsDragging!)
         
-        guard let viewToSwap: Draggable = self.event.draggableHitTest(pressGesturePosition: position), animationCompleted else {
+        guard let viewToSwap: Draggable = self.event.draggableHitTest(pressGesturePosition: position), animationCompleted.resetSwap, animationCompleted.swap else {
             return
         }
                 
         print("View to swap \(viewToSwap)")
         
-        self.animationCompleted = false
         
         if self.event.viewSwapped != nil {
+            if (viewToSwap as! UIView) !== (self.event.viewSwapped! as! UIView) {
+                self.animationCompleted.resetSwap = false
+                (self.event.viewSwapped as! UIView).center = (self.event.viewSwapped as! UIView).centerConvertedTo(view: self.event.mainView)
+                self.event.mainView.addSubview(self.event.viewSwapped as! UIView)
+                DraggableAnimations.swapAnimation(draggableView: self.event.viewSwapped!, oldDropArea: self.event.viewSwappedArea!, completion: { completed, draggableViewAnimated, dropAreaAnimated in
+                    self.event.drop(draggableView: draggableViewAnimated, draggableViewArea: dropAreaAnimated)
+                    self.animationCompleted.resetSwap = completed
+                })
+            }
             
-            (self.event.viewSwapped as! UIView).center = (self.event.viewSwapped as! UIView).centerConvertedTo(view: self.event.mainView)
-            self.event.mainView.addSubview(self.event.viewSwapped as! UIView)
-            DraggableAnimations.swapAnimation(draggableView: self.event.viewSwapped!, oldDropArea: self.event.viewSwappedArea!, completion: { completed, draggableViewAnimated, dropAreaAnimated in
-                self.event.drop(draggableView: draggableViewAnimated, draggableViewArea: dropAreaAnimated)
-            })
         }
         
         self.event.viewSwapped = viewToSwap
-        
-        
         self.event.viewSwappedArea = self.event.dropAreaHitTest(draggableViewPosition: (viewToSwap as! UIView).centerConvertedTo(view: self.event.mainView))
-        
         (viewToSwap as! UIView).center = (viewToSwap as! UIView).centerConvertedTo(view: self.event.mainView)
-        self.event.mainView.addSubview(self.event.viewSwapped as! UIView)
+        self.event.mainView.addSubview(viewToSwap as! UIView)
+        
+        self.animationCompleted.swap = false
         DraggableAnimations.swapAnimation(draggableView: viewToSwap, oldDropArea: self.event.oldDropArea!, completion: { completed, draggableViewAnimated, dropAreaAnimated in
             self.event.drop(draggableView: draggableViewAnimated, draggableViewArea: dropAreaAnimated)
-            self.animationCompleted = completed
+            self.animationCompleted.swap = completed
         })
+        
     }
     
     func ended(position: CGPoint) {
